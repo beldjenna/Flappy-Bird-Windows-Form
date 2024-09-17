@@ -50,6 +50,7 @@
             pipeBottom.SizeMode = PictureBoxSizeMode.StretchImage;
             pipeBottom.TabIndex = 0;
             pipeBottom.TabStop = false;
+            pipeBottom.Click += pipeBottom_Click;
             // 
             // flappyBird
             // 
@@ -96,6 +97,7 @@
             // 
             // gameTimer
             // 
+            gameTimer.Enabled = true;
             gameTimer.Interval = 20;
             gameTimer.Tick += gameTimerEvent;
             // 
