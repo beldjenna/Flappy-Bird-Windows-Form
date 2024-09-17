@@ -21,5 +21,30 @@ namespace Flappy_Bird_Windows_Form
         {
 
         }
+
+        private void ground_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gameTimerEvent(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gameKeyIsDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void gameKeyIsUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void pipeTop_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

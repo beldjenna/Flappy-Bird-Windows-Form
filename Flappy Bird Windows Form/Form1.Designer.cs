@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             pipeBottom = new PictureBox();
             flappyBird = new PictureBox();
             ground = new PictureBox();
             pipeTop = new PictureBox();
             scoreText = new Label();
+            gameTimer = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pipeBottom).BeginInit();
             ((System.ComponentModel.ISupportInitialize)flappyBird).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ground).BeginInit();
@@ -41,36 +43,45 @@
             // 
             // pipeBottom
             // 
-            pipeBottom.Location = new Point(491, 504);
+            pipeBottom.Image = Properties.Resources.pipe;
+            pipeBottom.Location = new Point(371, 371);
             pipeBottom.Name = "pipeBottom";
-            pipeBottom.Size = new Size(150, 75);
+            pipeBottom.Size = new Size(95, 217);
+            pipeBottom.SizeMode = PictureBoxSizeMode.StretchImage;
             pipeBottom.TabIndex = 0;
             pipeBottom.TabStop = false;
             // 
             // flappyBird
             // 
-            flappyBird.Location = new Point(144, 247);
+            flappyBird.Image = Properties.Resources.icons8_flappy_dunk_80;
+            flappyBird.Location = new Point(96, 238);
             flappyBird.Name = "flappyBird";
-            flappyBird.Size = new Size(150, 75);
+            flappyBird.Size = new Size(77, 68);
+            flappyBird.SizeMode = PictureBoxSizeMode.StretchImage;
             flappyBird.TabIndex = 1;
             flappyBird.TabStop = false;
             flappyBird.Click += pictureBox2_Click;
             // 
             // ground
             // 
-            ground.Location = new Point(12, 585);
+            ground.Image = Properties.Resources.ground;
+            ground.Location = new Point(0, 585);
             ground.Name = "ground";
-            ground.Size = new Size(710, 75);
+            ground.Size = new Size(735, 96);
+            ground.SizeMode = PictureBoxSizeMode.StretchImage;
             ground.TabIndex = 2;
             ground.TabStop = false;
             // 
             // pipeTop
             // 
-            pipeTop.Location = new Point(491, 12);
+            pipeTop.Image = Properties.Resources.pipedown;
+            pipeTop.Location = new Point(579, -3);
             pipeTop.Name = "pipeTop";
-            pipeTop.Size = new Size(150, 75);
+            pipeTop.Size = new Size(95, 208);
+            pipeTop.SizeMode = PictureBoxSizeMode.StretchImage;
             pipeTop.TabIndex = 3;
             pipeTop.TabStop = false;
+            pipeTop.Click += pipeTop_Click;
             // 
             // scoreText
             // 
@@ -82,6 +93,11 @@
             scoreText.TabIndex = 4;
             scoreText.Text = "Score : 0";
             scoreText.Click += label1_Click;
+            // 
+            // gameTimer
+            // 
+            gameTimer.Interval = 20;
+            gameTimer.Tick += gameTimerEvent;
             // 
             // Form1
             // 
@@ -97,6 +113,8 @@
             Name = "Form1";
             Text = "Flappy Bird";
             Load += Form1_Load;
+            KeyDown += gameKeyIsDown;
+            KeyUp += gameKeyIsUp;
             ((System.ComponentModel.ISupportInitialize)pipeBottom).EndInit();
             ((System.ComponentModel.ISupportInitialize)flappyBird).EndInit();
             ((System.ComponentModel.ISupportInitialize)ground).EndInit();
@@ -112,5 +130,6 @@
         private PictureBox ground;
         private PictureBox pipeTop;
         private Label scoreText;
+        private System.Windows.Forms.Timer gameTimer;
     }
 }
